@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/s-syed/REPO_NAME.png?branch=master)](https://travis-ci.org/YOUR_USER_NAME/REPO_NAME)
+
 # Assignment on Blang
 
 ## Testing Travis

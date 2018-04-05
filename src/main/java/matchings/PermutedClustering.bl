@@ -16,6 +16,28 @@ model PermutedClustering {
   random Matrix observations ?: latentMatrix(nGroups, groupSize)
   
   laws {
-    // Fill this. 
+  	
+//  	Initialize means
+  	means.get(0) ~ ContinuousUniform(0,1)
+  	for (int j : 1 ..< groupSize){
+  		means.get(j) | RealVar mean_last = means.get(j-1) ~ ContinuousUniform(mean_last, mean_last + 1) 
+  	}
+  	
+//  	Initialize Variances
+    for (int j : 0 ..< groupSize){
+  		variances.get(j) ~ Exponential(10) 
+  	}
+  	
+//  	Initialize permutaitons
+	for (int i : 0 ..< nGroups){
+  		permutations.get(i) ~ UniformPermutation() }
+  	
+  	for (int i : 0 ..< nGroups){
+  		for (int j : 0 ..< groupSize){
+  			observations.getRealVar(i,j) | means, variances,
+  				int perm = permutations.get(i).getConnections().get(j)
+  			~ Normal(means.get(perm), variances.get(perm))
+  		}
+  	}
   }
 }
