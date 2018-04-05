@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/s-syed/REPO_NAME.png?branch=master)](https://travis-ci.org/YOUR_USER_NAME/REPO_NAME)
+[![Build Status](https://travis-ci.org/s-syed/blangGradAssignment-scaffold.png?branch=master)](https://travis-ci.org/s-syed/blangGradAssignment-scaffold)
 
 # Assignment on Blang
 
