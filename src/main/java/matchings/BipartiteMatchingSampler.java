@@ -56,8 +56,6 @@ public class BipartiteMatchingSampler implements Sampler {
 	  if (!accept_proposal) {
 		  this.matching.getConnections().set(i, connection_i);
 		  }
-	  
-	  
   }
   
   private double logDensity() {

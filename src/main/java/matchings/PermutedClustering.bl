@@ -35,8 +35,8 @@ model PermutedClustering {
   	for (int i : 0 ..< nGroups){
   		for (int j : 0 ..< groupSize){
   			observations.getRealVar(i,j) | means, variances,
-  				int perm = permutations.get(i).getConnections().get(j)
-  			~ Normal(means.get(perm), variances.get(perm))
+  				int permutation = permutations.get(i).getConnections().get(j)
+  			~ Normal(means.get(permutation), variances.get(permutation))
   		}
   	}
   }
